@@ -1,16 +1,21 @@
 /*global $, jQuery*/
 $(function () {
     'use strict';
+    // navbar mobile menu
+    $('.mobileMenu').on('click', function () {
+        $('.navbar').toggleClass('displayBlock');
+    });
+    // navbar links
     $('.navbar li a').click(function () {
         $(this).parent().addClass('active').siblings().removeClass('active');
     });
-    
+    // navbar links scrolling
     $('.navbar li a').click(function () {
         $('html, body').animate({
             scrollTop: $('#' + $(this).data('value')).offset().top - (50)
         }, 1000);
     });
-    
+    // information section tabs
     $('.infoList li').on('click', function () {
         $(this).addClass('select').siblings().removeClass('select');
         $('.infoContent div').hide();
